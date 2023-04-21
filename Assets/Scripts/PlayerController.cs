@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
 
     float moveSpeed = 4f;
 
@@ -12,6 +13,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator myAnimator;
     SpriteRenderer mySpriteRenderer;
+
+    private bool facingLeft = false;
 
     private void Awake()
     {
@@ -57,10 +60,12 @@ public class PlayerController : MonoBehaviour
         if(mousePos.x < playerScreenPoint.x)
         {
             mySpriteRenderer.flipX = true;
+            FacingLeft = true;
         }
         else
         {
             mySpriteRenderer.flipX = false;
+            FacingLeft = false;
         }
 
     }
