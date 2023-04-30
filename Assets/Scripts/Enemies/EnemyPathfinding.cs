@@ -8,15 +8,19 @@ public class EnemyPathfinding : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
     Vector2 moveDir;
     Rigidbody2D rb;
+    Knockback knockBack;
     
 
     private void Awake()
     {
+        knockBack = GetComponent<Knockback>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
+        if (knockBack.gettingKnockedBack) { return; }
+
         EnemyRoaming();
     }
 
