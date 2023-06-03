@@ -7,10 +7,12 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] int startingHealth = 3;
     private int currentHealth;
     private Knockback knockback;
+    private Flash flash;
 
     private void Awake()
     {
         knockback = GetComponent<Knockback>();
+        flash = GetComponent<Flash>();
     }
 
     // Start is called before the first frame update
@@ -25,10 +27,17 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = currentHealth - damage;
 
         knockback.GetKnockedBack(PlayerController.Instance.transform, 15f);
+        StartCoroutine(flash.FlashRoutine());
+        StartCoroutine(CheckDetectDeathRoutine());
+    }
+
+    public IEnumerator CheckDetectDeathRoutine()
+    {
+        yield return new WaitForSeconds(flash.GetRestoreDefaultMatTime());
         DetectDeath();
     }
 
-    private void DetectDeath()
+    public void DetectDeath()
     {
         if(currentHealth == 0)
         {
