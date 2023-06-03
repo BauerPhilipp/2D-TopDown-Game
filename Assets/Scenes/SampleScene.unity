@@ -2027,6 +2027,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1121275400668403436, guid: cf5a59212ca81cb44a2eb37e57275d41, type: 3}
   m_PrefabInstance: {fileID: 1875295212}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2246859368601702944
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1477274499220409343, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
+      propertyPath: m_Name
+      value: SlimeDeathVFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460310626089286465, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460310626089286465, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.6658316
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460310626089286465, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8339632
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460310626089286465, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.09069143
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460310626089286465, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460310626089286465, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460310626089286465, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460310626089286465, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460310626089286465, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460310626089286465, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460310626089286465, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
 --- !u!1001 &3165765163325760965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2035,6 +2096,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2195641534540004494, guid: 2b1fd5a2df4e0de43bfbad7d25e520a8, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 1477274499220409343, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
     - target: {fileID: 5694592833047633746, guid: 2b1fd5a2df4e0de43bfbad7d25e520a8, type: 3}
       propertyPath: m_RootOrder
       value: 4
