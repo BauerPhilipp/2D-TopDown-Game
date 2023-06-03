@@ -2096,10 +2096,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2195641534540004494, guid: 2b1fd5a2df4e0de43bfbad7d25e520a8, type: 3}
-      propertyPath: deathVFXPrefab
-      value: 
-      objectReference: {fileID: 1477274499220409343, guid: 3995f909226eaca49b7cc02bc9067b00, type: 3}
     - target: {fileID: 5694592833047633746, guid: 2b1fd5a2df4e0de43bfbad7d25e520a8, type: 3}
       propertyPath: m_RootOrder
       value: 4
