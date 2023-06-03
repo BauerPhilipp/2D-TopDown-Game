@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
+    public bool FacingLeft { get { return facingLeft;} }
     public static PlayerController Instance;
 
-    float moveSpeed = 4f;
+    [SerializeField] float moveSpeed = 4f;
+    [SerializeField] float dashSpeed = 4f;
+    [SerializeField] TrailRenderer myTrailRenderer;
 
     PlayerControls playerControls;
     Vector2 movement;
@@ -16,6 +18,8 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer mySpriteRenderer;
 
     private bool facingLeft = false;
+    private bool isDashing = false;
+    private float startingMoveSpeed;
 
     private void Awake()
     {
@@ -25,6 +29,12 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        playerControls.Combat.Dash.performed += _ => Dash();
+        startingMoveSpeed = moveSpeed;
     }
 
     private void OnEnable()
@@ -63,14 +73,35 @@ public class PlayerController : MonoBehaviour
         if(mousePos.x < playerScreenPoint.x)
         {
             mySpriteRenderer.flipX = true;
-            FacingLeft = true;
+            facingLeft = true;
         }
         else
         {
             mySpriteRenderer.flipX = false;
-            FacingLeft = false;
+            facingLeft = false;
         }
+    }
 
+    private void Dash()
+    {
+        if (!isDashing)
+        {
+            isDashing = true;
+            moveSpeed *= dashSpeed;
+            myTrailRenderer.emitting = true;
+            StartCoroutine(EndDashRoutine());
+        }
+    }
+
+    private IEnumerator EndDashRoutine()
+    {
+        float dashTime = .2f;
+        float dashCD = .25f;
+        yield return new WaitForSeconds(dashTime);
+        moveSpeed = startingMoveSpeed;
+        myTrailRenderer.emitting = false;
+        yield return new WaitForSeconds(dashCD);
+        isDashing = false;
     }
 
 }
